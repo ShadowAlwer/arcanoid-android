@@ -13,7 +13,36 @@ public class PlatformController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        //inputs for debuger-----------------------------------------------------
         float direction = Input.GetAxis("Horizontal");
         GetComponent<Rigidbody2D>().velocity = Vector2.right * direction * speed;
-	}
+        //-----------------------------------------------------------------------
+
+        //inputs for android-----------------------------------------------------
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.touches[0];
+            if (touch.phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled)
+            {
+                if (touch.position.x > (Screen.width / 2))
+                {
+                    MoveRight(); //moves platform right
+                }
+
+                if (touch.position.x < (Screen.width / 2))
+                {
+                    MoveLeft(); //moves platform left
+                }
+            }
+        }
+        //-----------------------------------------------------------------------
+    }
+
+    void MoveRight() {
+        GetComponent<Rigidbody2D>().velocity = Vector2.right * speed;
+    }
+
+    void MoveLeft() {
+        GetComponent<Rigidbody2D>().velocity = Vector2.left * speed;
+    }
 }
