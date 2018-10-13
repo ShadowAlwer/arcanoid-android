@@ -21,18 +21,20 @@ public class PlatformController : MonoBehaviour {
         //inputs for android-----------------------------------------------------
         if (Input.touchCount > 0)
         {
-            Touch touch = Input.GetTouch(0);   //chyba usuwa dotyk z listy
-            //Touch touch = Input.touches[0];    
-            if (touch.phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled)
+            foreach (Touch touch in Input.touches)
             {
-                if (touch.position.x > (Screen.width / 2))
+                if (touch.phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled &&  touch.tapCount<2)
                 {
-                    MoveRight(); //moves platform right
-                }
+                    if (touch.position.x > (Screen.width / 2))
+                    {
+                        MoveRight(); //moves platform right
+                    }
 
-                if (touch.position.x < (Screen.width / 2))
-                {
-                    MoveLeft(); //moves platform left
+                    if (touch.position.x < (Screen.width / 2))
+                    {
+                        MoveLeft(); //moves platform left
+                    }
+                    //break;
                 }
             }
         }

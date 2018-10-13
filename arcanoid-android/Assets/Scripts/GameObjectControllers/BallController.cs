@@ -30,10 +30,12 @@ public class BallController : MonoBehaviour
                 //TODO:poprawić rozróżnianie między dotknięciami, multitouch!!
                 if (Input.touchCount > 0)
                 {
-                    Touch touch = Input.GetTouch(0);
-                    if (touch.phase == TouchPhase.Ended && touch.deltaTime < 30)
+                    foreach (Touch touch in Input.touches)
                     {
-                        ballStart = true;
+                        if (touch.phase == TouchPhase.Ended && touch.tapCount > 1)
+                        {
+                            ballStart = true;
+                        }
                     }
                 }
             }
@@ -91,4 +93,6 @@ public class BallController : MonoBehaviour
             }
         }
     }
+
+
 }
