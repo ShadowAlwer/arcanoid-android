@@ -27,7 +27,7 @@ public class BallController : MonoBehaviour
             if (Application.platform == RuntimePlatform.Android)
             {
 
-                //TODO:poprawić rozróżnianie między dotknięciami, multitouch!!
+                
                 if (Input.touchCount > 0)
                 {
                     foreach (Touch touch in Input.touches)

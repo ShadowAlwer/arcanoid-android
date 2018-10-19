@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class BlockController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public int pointsValue = 50;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -21,4 +13,19 @@ public class BlockController : MonoBehaviour {
         }
     }
 
+    public int GetPointValue() {
+        return pointsValue;
+    }
+
+
+
+    // Use this for initialization
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
 }
