@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class SwitchScenButtonController : MonoBehaviour {
 
     public string scenToLoad;
-	
 
-    private void OnMouseDown()
+
+    public void LoadScene()
     {
         SceneManager.LoadScene(scenToLoad);
     }
+    
 }
