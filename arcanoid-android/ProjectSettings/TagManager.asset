@@ -8,6 +8,7 @@ TagManager:
   - Bottom
   - Block
   - Platform
+  - PauzeButton
   layers:
   - Default
   - TransparentFX
