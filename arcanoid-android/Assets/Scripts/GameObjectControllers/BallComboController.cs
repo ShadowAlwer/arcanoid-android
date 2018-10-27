@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Assets.Scripts.Consts;
 
 public class BallComboController : MonoBehaviour {
 
     public Text scoreUI;
     public Text comboUI;
+
+    public string platformTag = "Platform";
+    public string blockTag = "Block";
 
     const string SCORE_STRING = "Score: ";
     const string COMBO_STRING = "Combo: ";
@@ -18,13 +22,13 @@ public class BallComboController : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag(Tags.PLATFORM))
         {
             combo = 0;
             comboUI.text = COMBO_STRING + combo;
         }
 
-        if (collision.gameObject.CompareTag("Block")) {
+        if (collision.gameObject.CompareTag(Tags.BLOCK)) {
             combo++;
             score += combo * collision.gameObject.GetComponent<BlockController>().GetPointValue();
             scoreUI.text = SCORE_STRING + score;

@@ -12,13 +12,17 @@ public class ButtonController : MonoBehaviour {
     {
         if (PauseMenuController.GamePaused)
         {
-            PauseMenuController.GamePaused = false;
-            Time.timeScale = 1f;
+            Resume();
         }
         SceneManager.LoadScene(scenToLoad);
         
     }
 
+    public void Resume() {
+        PauseMenuController.GamePaused = false;
+        Time.timeScale = 1f;
+
+    }
 
     public void QuitGame() {
         Application.Quit();
