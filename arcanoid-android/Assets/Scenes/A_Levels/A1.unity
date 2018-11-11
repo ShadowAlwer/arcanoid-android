@@ -372,7 +372,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 151651094}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b48d8df7598f6d0418c1c457d8f57f6f, type: 3}
   m_Name: 
@@ -2144,7 +2144,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 516664506}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b48d8df7598f6d0418c1c457d8f57f6f, type: 3}
   m_Name: 
@@ -2816,6 +2816,11 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 0.8113208
+      objectReference: {fileID: 0}
+    - target: {fileID: 114553829983505986, guid: e9c61f41cab90634f980676109b82869,
+        type: 2}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9c61f41cab90634f980676109b82869, type: 2}
@@ -4055,10 +4060,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 896508598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b48d8df7598f6d0418c1c457d8f57f6f, type: 3}
+  m_Script: {fileID: 11500000, guid: c58fbc8d4d1d5e04c968a4f099fc41fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenToLoad: VictoryTest
+  lives: 3
+  godMode: 0
+  ballPoint: {fileID: 1103096269}
+  scenToLoad: WelcomeTest
 --- !u!4 &896508600
 Transform:
   m_ObjectHideFlags: 0
@@ -4919,6 +4927,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.43, y: 0.14}
   m_EdgeRadius: 0
+--- !u!4 &1103096269 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4051566696496422, guid: ea5c4b51bfdced546ae25fd2654fd834,
+    type: 2}
+  m_PrefabInternal: {fileID: 1103096265}
 --- !u!1001 &1130291832
 Prefab:
   m_ObjectHideFlags: 0
@@ -7519,7 +7532,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1992339819}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b48d8df7598f6d0418c1c457d8f57f6f, type: 3}
   m_Name: 
@@ -7804,6 +7817,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.542524
       objectReference: {fileID: 0}
+    - target: {fileID: 114565126598445886, guid: c039143fab4f3ba4f9e7fe6f504c1540,
+        type: 2}
+      propertyPath: levelMenager
+      value: 
+      objectReference: {fileID: 896508599}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c039143fab4f3ba4f9e7fe6f504c1540, type: 2}
   m_IsPrefabAsset: 0
@@ -7825,8 +7843,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreUI: {fileID: 1541644315}
   comboUI: {fileID: 5659547}
-  platformTag: Platform
-  blockTag: Block
 --- !u!1 &2050731952
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,9 +9,6 @@ public class BallComboController : MonoBehaviour {
     public Text scoreUI;
     public Text comboUI;
 
-    public string platformTag = "Platform";
-    public string blockTag = "Block";
-
     const string SCORE_STRING = "Score: ";
     const string COMBO_STRING = "Combo: ";
 

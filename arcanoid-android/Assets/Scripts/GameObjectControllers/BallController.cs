@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Consts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,13 +8,15 @@ public class BallController : MonoBehaviour
 
     public bool started = false;
     public float speed = 10f;
+    public LevelMenager levelMenager;
     //Camera cam;
     GameObject platform;
+    
     // Use this for initialization
     void Start()
     {
         //GetComponent<Rigidbody2D>().velocity = Vector2.up * speed;
-        platform = GameObject.FindGameObjectWithTag("Platform");
+        platform = GameObject.FindGameObjectWithTag(Tags.PLATFORM);
     }
 
     // Update is called once per frame
@@ -92,6 +95,20 @@ public class BallController : MonoBehaviour
                 GetComponent<Rigidbody2D>().velocity = Vector2.ClampMagnitude(GetComponent<Rigidbody2D>().velocity, 1) * speed;
             }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == Tags.BOTTOM_WALL)
+        {
+            levelMenager.BottomWallHit();
+        }
+    }
+
+    public void Stop(Transform ballPoint) {
+        started = false;
+        transform.position = ballPoint.position;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
 

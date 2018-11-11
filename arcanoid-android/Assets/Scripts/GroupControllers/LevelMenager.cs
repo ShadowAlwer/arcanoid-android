@@ -5,12 +5,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class BlockGroupController : MonoBehaviour {
+public class LevelMenager : MonoBehaviour {
 
     GameObject blockChceck;
     string scenName;
     GameObject ball;
-
+    
+    public int lives = 3;
+    public bool godMode = false;
+    public Transform ballPoint;
     public string scenToLoad;
 
 
@@ -30,6 +33,21 @@ public class BlockGroupController : MonoBehaviour {
                 PlayerPrefs.SetInt(scenName+"HighScore", score);
             }
             SceneManager.LoadScene(scenToLoad);
+        }
+    }
+
+    public void BottomWallHit() {
+        if (!godMode) {
+            lives--;
+            if (lives <= 0)
+            {
+                Destroy(ball);
+                SceneManager.LoadScene(scenToLoad);
+            }
+            else {
+            
+                ball.GetComponent<BallController>().Stop(ballPoint);
+            }
         }
     }
 }
