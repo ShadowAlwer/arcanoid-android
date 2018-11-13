@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Consts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,8 @@ public class LevelMenager : MonoBehaviour {
     public int lives = 3;
     public bool godMode = false;
     public Transform ballPoint;
-    public string scenToLoad;
+    public PauseMenuController victoryPauseMenu;
+    public PauseMenuController defeatPauseMenu;
 
 
     // Use this for initialization
@@ -28,12 +30,19 @@ public class LevelMenager : MonoBehaviour {
         blockChceck = GameObject.FindGameObjectWithTag(Tags.BLOCK);
 
         if (blockChceck == null) {
-            int score=ball.GetComponent<BallComboController>().GetScore();
-            if (score > PlayerPrefs.GetInt(scenName+"HighScore")) {
-                PlayerPrefs.SetInt(scenName+"HighScore", score);
-            }
-            SceneManager.LoadScene(scenToLoad);
+            Victory();
+            
         }
+    }
+
+    private void Victory()
+    {
+        int score = ball.GetComponent<BallComboController>().GetScore();
+        if (score > PlayerPrefs.GetInt(scenName + "HighScore"))
+        {
+            PlayerPrefs.SetInt(scenName + "HighScore", score);
+        }
+        victoryPauseMenu.Victory();
     }
 
     public void BottomWallHit() {
@@ -41,13 +50,17 @@ public class LevelMenager : MonoBehaviour {
             lives--;
             if (lives <= 0)
             {
-                Destroy(ball);
-                SceneManager.LoadScene(scenToLoad);
+                Defeat();                
             }
             else {
             
                 ball.GetComponent<BallController>().Stop(ballPoint);
             }
         }
+    }
+
+    private void Defeat()
+    {
+        defeatPauseMenu.Defeat();
     }
 }

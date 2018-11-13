@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class PauseMenuController : MonoBehaviour {
 
     public static bool GamePaused = false;
 
-    public GameObject pauzeButton;
+    public GameObject levelGUI;
 
 
 
@@ -14,7 +15,7 @@ public class PauseMenuController : MonoBehaviour {
         GamePaused = true;
         Time.timeScale = 0f;
         this.gameObject.SetActive(true);
-        pauzeButton.SetActive(false);
+        levelGUI.SetActive(false);
     }
 
 
@@ -22,7 +23,16 @@ public class PauseMenuController : MonoBehaviour {
         GamePaused = false;
         Time.timeScale = 1f;
         this.gameObject.SetActive(false);
-        pauzeButton.SetActive(true);
+        levelGUI.SetActive(true);
     }
 
+    public void Victory()
+    {
+        PauseGame();
+    }
+
+    internal void Defeat()
+    {
+        PauseGame();
+    }
 }
