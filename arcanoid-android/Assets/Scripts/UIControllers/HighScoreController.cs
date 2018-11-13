@@ -7,47 +7,58 @@ using UnityEngine.UI;
 public class HighScoreController : MonoBehaviour {
 
     private const string HIGH_SCORE_KEY = "HighScore";
-    private const string HIGH_SCORE_TEXT = " High Score:\n" ;
+    private const string HIGH_SCORE_TEXT = ": " ;
 
-    public Text highScoreText;
+    //public Text highScoreText;
 
+    public GameObject panelPrefab;
 
+    List<GameObject> highScoresPanels;
 
     void Start () {
-        string highScore=PlayerPrefs.GetInt(Levels.PHYSICS_TEST+HIGH_SCORE_KEY, 0).ToString();
-        highScoreText.text = HIGH_SCORE_TEXT + highScore+"\n";
-
-        highScoreText.text += GetAllHighScores();
+        highScoresPanels = new List<GameObject>();
+        GetAllHighScores();
     }
 
-    string GetAllHighScores() {
+    void GetAllHighScores() {
         string allHighScores = "";
         string tmp;
         Levels levels = new Levels();
 
         foreach(string levelType in Levels.LEVEL_TYPES) {
             foreach (string levelName in (string[])levels.GetType().GetField(levelType).GetValue(levels)) {
-               tmp = GetHighScoreByLevelName(levelName);
+                GameObject panel = Instantiate(panelPrefab) as GameObject;
+                tmp = GetHighScoreByLevelName(levelName);
                 Debug.Log("Level Name="+levelName);
-                Debug.Log("TMP=" + tmp);
-                allHighScores = levelName +HIGH_SCORE_TEXT + tmp + "\n";
+                //Debug.Log("TMP=" + tmp);
+                panel.transform.SetParent(this.transform, false);
+                panel.GetComponentInChildren<Text>().text = levelName +HIGH_SCORE_TEXT + tmp;
+                highScoresPanels.Add(panel);
             }
         }
 
-        return allHighScores;
     }
 
 
     string GetHighScoreByLevelName(string levelName) {
         string highScore = PlayerPrefs.GetInt(levelName + HIGH_SCORE_KEY, 0).ToString();
+
+        if (highScore == "0") {
+            highScore = "------";
+        }
         return highScore;
     }
 
 
 
     public void ResetHighScoreAll() {
-        highScoreText.text = HIGH_SCORE_TEXT + 0;
         PlayerPrefs.DeleteAll();
+
+        foreach (GameObject panel in highScoresPanels) {
+            Destroy(panel);
+        }
+        highScoresPanels.Clear();
+        GetAllHighScores();
     }
 
     //private void onlevelwasloaded(int level)

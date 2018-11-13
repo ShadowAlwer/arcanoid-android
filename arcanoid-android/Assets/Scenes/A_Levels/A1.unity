@@ -377,7 +377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48d8df7598f6d0418c1c457d8f57f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenToLoad: VictoryTest
 --- !u!4 &151651096
 Transform:
   m_ObjectHideFlags: 0
@@ -385,7 +384,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 151651094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 269, y: 728, z: 0}
+  m_LocalPosition: {x: 234, y: 728, z: 0}
   m_LocalScale: {x: 54.96578, y: 77.0395, z: 1}
   m_Children:
   - {fileID: 1520651118}
@@ -1707,7 +1706,7 @@ Transform:
   m_LocalScale: {x: 13.860098, y: 3.9140384, z: 1}
   m_Children: []
   m_Father: {fileID: 974314185}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &464633007
 BoxCollider2D:
@@ -2149,7 +2148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48d8df7598f6d0418c1c457d8f57f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenToLoad: VictoryTest
 --- !u!4 &516664508
 Transform:
   m_ObjectHideFlags: 0
@@ -2253,7 +2251,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4797485130674982, guid: dc8148a24e8d5604cbdfd07c4373589e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.24
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4797485130674982, guid: dc8148a24e8d5604cbdfd07c4373589e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2277,7 +2275,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4797485130674982, guid: dc8148a24e8d5604cbdfd07c4373589e, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1560880539166610, guid: dc8148a24e8d5604cbdfd07c4373589e, type: 2}
       propertyPath: m_Name
@@ -4357,8 +4355,8 @@ Transform:
   m_LocalPosition: {x: 423.5, y: 633.5, z: 0}
   m_LocalScale: {x: 101.29019, y: 108.7008, z: 1}
   m_Children:
-  - {fileID: 464633006}
   - {fileID: 522923358}
+  - {fileID: 464633006}
   - {fileID: 1539160707}
   - {fileID: 1873488731}
   m_Father: {fileID: 0}
@@ -6345,7 +6343,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1539160706}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -3.74, y: -1.26, z: -0.037153654}
+  m_LocalPosition: {x: -3.82, y: -1.17, z: -0.037153654}
   m_LocalScale: {x: 19.603285, y: 3.7858896, z: 1}
   m_Children: []
   m_Father: {fileID: 974314185}
@@ -7537,7 +7535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48d8df7598f6d0418c1c457d8f57f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenToLoad: VictoryTest
 --- !u!4 &1992339821
 Transform:
   m_ObjectHideFlags: 0
@@ -7545,7 +7542,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1992339819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 269, y: 522, z: 0}
+  m_LocalPosition: {x: 232, y: 522, z: 0}
   m_LocalScale: {x: 54.96578, y: 77.0395, z: 1}
   m_Children:
   - {fileID: 1905069356}

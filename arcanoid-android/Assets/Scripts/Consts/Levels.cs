@@ -11,7 +11,7 @@ namespace Assets.Scripts.Consts
 
         public static readonly string[] LEVEL_TYPES = { "A" };
 
-        public readonly string[] A = { "A1" };
+        public readonly string[] A = { "A1", "A2","A3" };
 
        
         
