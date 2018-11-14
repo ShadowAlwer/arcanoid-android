@@ -9,6 +9,7 @@ TagManager:
   - Block
   - Platform
   - PauzeButton
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -46,9 +47,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 904082919
+  - name: ParticleEffect
+    uniqueID: 3645154035
     locked: 0
   - name: Object
     uniqueID: 1517015295
+    locked: 0
+  - name: Background
+    uniqueID: 904082919
     locked: 0

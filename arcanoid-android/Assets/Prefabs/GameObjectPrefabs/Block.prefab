@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114888684385564002}
   m_Layer: 0
   m_Name: Block
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1310661867544730}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4, y: 4.08, z: -0.037794612}
+  m_LocalPosition: {x: -1.608, y: 4.088, z: -0.037794612}
   m_LocalScale: {x: 5.2862, y: 4.4182, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,10 +111,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1517015295
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a388a70ffd8d138469f287e2c0b382d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ccebd523efb7b6d42b36b884de988e78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
