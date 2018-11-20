@@ -24,8 +24,7 @@ public class BallController : MonoBehaviour
     
     // Use this for initialization
     void Start()
-    {
-        
+    {      
         platform = GameObject.FindGameObjectWithTag(Tags.PLATFORM);
     }
 
@@ -149,7 +148,7 @@ public class BallController : MonoBehaviour
 
     private void UpdateSlider() {
         acelerationSlider.value = (Time.time - lastAcelerationTime) / acelerationCooldown;
-        if (acelerationSlider.value > 0.95)
+        if (acelerationSlider.value > 0.98)
         {
             acelerationSliderImage.color = fullBar;
         }            

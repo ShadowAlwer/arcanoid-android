@@ -7,12 +7,11 @@ public class PlatformController : MonoBehaviour {
     public float speed = 20f;
 	// Use this for initialization
 	void Start () {
-		
+        Time.timeScale = 1f; //TODO:check why timeScale zeros after victory
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
         //inputs for PC-----------------------------------------------------
         float direction = Input.GetAxis("Horizontal");
         GetComponent<Rigidbody2D>().velocity = Vector2.right * direction * speed;

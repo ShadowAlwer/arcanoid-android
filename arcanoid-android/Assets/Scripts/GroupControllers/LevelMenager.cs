@@ -37,12 +37,13 @@ public class LevelMenager : MonoBehaviour {
 
     private void Victory()
     {
+        victoryPauseMenu.Victory();
         int score = ball.GetComponent<BallComboController>().GetScore();
         if (score > PlayerPrefs.GetInt(scenName + "HighScore"))
         {
             PlayerPrefs.SetInt(scenName + "HighScore", score);
         }
-        victoryPauseMenu.Victory();
+        
     }
 
     public void BottomWallHit() {

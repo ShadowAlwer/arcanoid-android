@@ -12,6 +12,7 @@ public class ButtonController : MonoBehaviour {
     {
         if (PauseMenuController.GamePaused)
         {
+            Debug.Log("Resuming");
             Resume();
         }
         SceneManager.LoadScene(scenToLoad);
