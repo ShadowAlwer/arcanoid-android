@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallController : MonoBehaviour
 {
@@ -9,13 +10,22 @@ public class BallController : MonoBehaviour
     public bool started = false;
     public float speed = 10f;
     public LevelMenager levelMenager;
-    //Camera cam;
+    public float minAcelerate = 1.1f;
+    public float acelerationCooldown=2;
+    public Text acelerationDisplay;
+    public Slider acelerationSlider;
+    public Image acelerationSliderImage;
+
+    public Color cdBar;
+    public Color fullBar;
+    float lastAcelerationTime;
+
     GameObject platform;
     
     // Use this for initialization
     void Start()
     {
-        //GetComponent<Rigidbody2D>().velocity = Vector2.up * speed;
+        
         platform = GameObject.FindGameObjectWithTag(Tags.PLATFORM);
     }
 
@@ -38,6 +48,8 @@ public class BallController : MonoBehaviour
                         if (touch.phase == TouchPhase.Ended && touch.tapCount > 1)
                         {
                             ballStart = true;
+                            lastAcelerationTime = Time.time;
+                            ResetSlider();
                         }
                     }
                 }
@@ -90,10 +102,14 @@ public class BallController : MonoBehaviour
 
         if (started == true)
         {
+            if (SystemInfo.supportsAccelerometer) {
+                Acelerate();
+            }
             if (GetComponent<Rigidbody2D>().velocity.magnitude != speed)
             {
-                GetComponent<Rigidbody2D>().velocity = Vector2.ClampMagnitude(GetComponent<Rigidbody2D>().velocity, 1) * speed;
+                    GetComponent<Rigidbody2D>().velocity = Vector2.ClampMagnitude(GetComponent<Rigidbody2D>().velocity, 1) * speed;
             }
+
         }
     }
 
@@ -105,10 +121,54 @@ public class BallController : MonoBehaviour
         }
     }
 
+
+    private void Acelerate() {
+
+        float x = Input.acceleration.x;
+        float y = Input.acceleration.y;
+        float magnitude2D =Mathf.Sqrt( x * x + y * y);
+
+        if (acelerationDisplay != null) {
+            acelerationDisplay.text = magnitude2D.ToString();
+        }
+
+
+        if (Time.time < lastAcelerationTime + acelerationCooldown) {
+            UpdateSlider();
+        }
+        else if (magnitude2D>minAcelerate) {
+            Vector2 aceleration = new Vector2(x, y);
+            //aceleration = (aceleration + GetComponent<Rigidbody2D>().velocity);  //średnia z wektora prszyśpieszenia i szybkości
+            aceleration.Normalize();
+            GetComponent<Rigidbody2D>().velocity =aceleration* speed;
+            lastAcelerationTime = Time.time;
+            acelerationSlider.value = 0;
+            acelerationSliderImage.color = cdBar;
+        }
+    }
+
+    private void UpdateSlider() {
+        acelerationSlider.value = (Time.time - lastAcelerationTime) / acelerationCooldown;
+        if (acelerationSlider.value > 0.95)
+        {
+            acelerationSliderImage.color = fullBar;
+        }            
+    }
+
+    private void ResetSlider() {
+        acelerationSlider.value = 0;
+        acelerationSliderImage.color = cdBar;
+    }
+ 
+
+
+
+
     public void Stop(Transform ballPoint) {
         started = false;
         transform.position = ballPoint.position;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        ResetSlider();
     }
 
 
