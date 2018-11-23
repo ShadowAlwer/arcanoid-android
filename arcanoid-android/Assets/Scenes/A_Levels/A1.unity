@@ -7233,6 +7233,11 @@ Prefab:
       propertyPath: levelGUI
       value: 
       objectReference: {fileID: 1622737085}
+    - target: {fileID: 114247630035634778, guid: 2ff336192c1d2b042bb8bc164ffc4d77,
+        type: 2}
+      propertyPath: scenToLoad
+      value: A1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff336192c1d2b042bb8bc164ffc4d77, type: 2}
   m_IsPrefabAsset: 0

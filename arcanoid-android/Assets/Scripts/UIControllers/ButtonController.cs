@@ -10,20 +10,16 @@ public class ButtonController : MonoBehaviour {
 
     public void LoadScene()
     {
-        if (PauseMenuController.GamePaused)
+        if (FindObjectOfType<PauseMenuController>().GamePaused)
         {
             Debug.Log("Resuming");
-            Resume();
+            FindObjectOfType<PauseMenuController>().ResumeGame();
         }
         SceneManager.LoadScene(scenToLoad);
         
     }
 
-    public void Resume() {
-        PauseMenuController.GamePaused = false;
-        Time.timeScale = 1f;
 
-    }
 
     public void QuitGame() {
         Application.Quit();

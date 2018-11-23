@@ -23,7 +23,18 @@ public class LevelMenager : MonoBehaviour {
     void Start () {
         ball = GameObject.FindGameObjectWithTag(Tags.BALL);
         scenName = SceneManager.GetActiveScene().name;
-	}
+
+
+            Debug.Log("Starting level menager");
+            if (Time.timeScale == 0f)
+            {
+                Debug.Log("Restarting game time scale");
+                Time.timeScale = 1f;
+
+            }
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

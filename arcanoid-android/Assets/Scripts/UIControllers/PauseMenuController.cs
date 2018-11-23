@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class PauseMenuController : MonoBehaviour {
 
-    public static bool GamePaused = false;
+    public bool GamePaused = false;
 
     public GameObject levelGUI;
-
 
 
     public  void PauseGame() {
@@ -31,8 +30,11 @@ public class PauseMenuController : MonoBehaviour {
         PauseGame();
     }
 
-    internal void Defeat()
+    public void Defeat()
     {
         PauseGame();
     }
+
+
+
 }
