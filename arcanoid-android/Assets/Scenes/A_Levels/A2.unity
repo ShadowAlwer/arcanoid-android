@@ -1242,6 +1242,11 @@ Prefab:
       propertyPath: m_Name
       value: Blocks (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114718775426714000, guid: 9dede835d332fa04198695bc11eaad24,
+        type: 2}
+      propertyPath: musicTheme
+      value: ATheme
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dede835d332fa04198695bc11eaad24, type: 2}
   m_IsPrefabAsset: 0

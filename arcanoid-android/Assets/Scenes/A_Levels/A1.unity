@@ -4677,6 +4677,7 @@ MonoBehaviour:
   ballPoint: {fileID: 1103096269}
   victoryPauseMenu: {fileID: 1384745465}
   defeatPauseMenu: {fileID: 1445839221}
+  musicTheme: ATheme
 --- !u!4 &896508600
 Transform:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Consts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,15 +10,18 @@ public class BlockController : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag=="Ball") {
+        if (collision.gameObject.tag==Tags.BALL) {
             if (destroyEffectPrefab != null) {
                 GameObject destroyEffect= Instantiate(destroyEffectPrefab) as GameObject;
                 destroyEffect.transform.position = this.transform.position;
                 destroyEffect.transform.SetParent(transform.parent);
                 destroyEffect.transform.localScale = transform.localScale;
-                //destoyEffect.transform.SetParent
                 Destroy(destroyEffect, 2f);
             }
+
+            FindObjectOfType<AudioMenager>().Play("Beep1");
+
+           
             Destroy(gameObject);
         }
     }

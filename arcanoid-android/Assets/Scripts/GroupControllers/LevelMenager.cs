@@ -17,6 +17,7 @@ public class LevelMenager : MonoBehaviour {
     public Transform ballPoint;
     public PauseMenuController victoryPauseMenu;
     public PauseMenuController defeatPauseMenu;
+    public string musicTheme;
 
 
     // Use this for initialization
@@ -25,13 +26,15 @@ public class LevelMenager : MonoBehaviour {
         scenName = SceneManager.GetActiveScene().name;
 
 
-            Debug.Log("Starting level menager");
-            if (Time.timeScale == 0f)
-            {
-                Debug.Log("Restarting game time scale");
-                Time.timeScale = 1f;
+        Debug.Log("Starting level menager");
+        if (Time.timeScale == 0f)
+        {
+            Debug.Log("Restarting game time scale");
+            Time.timeScale = 1f;
 
-            }
+        }
+
+        FindObjectOfType<AudioMenager>().PlayTheme(musicTheme);
 
 
     }
