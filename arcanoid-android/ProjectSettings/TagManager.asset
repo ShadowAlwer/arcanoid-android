@@ -10,6 +10,7 @@ TagManager:
   - Platform
   - PauzeButton
   - FxTemporaire
+  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -42,7 +43,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - MyLayer
   m_SortingLayers:
   - name: Default
     uniqueID: 0

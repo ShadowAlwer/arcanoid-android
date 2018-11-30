@@ -13,5 +13,7 @@ namespace Assets.Scripts.Consts
         public static readonly string WALL = "Wall";
         public static readonly string BOTTOM_WALL = "Bottom";
         public static readonly string PAUZE_BUTTON = "PauzeButton";
+        public static readonly string POWER_UP = "PowerUp";
     }
+
 }

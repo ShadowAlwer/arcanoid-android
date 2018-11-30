@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Consts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,4 +48,13 @@ public class PlatformController : MonoBehaviour {
     void MoveLeft() {
         GetComponent<Rigidbody2D>().velocity = Vector2.left * speed;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == Tags.POWER_UP){
+            GetComponent<PowerUpMenager>().ApplayPowerUp(collision.gameObject.GetComponent<PowerUpController>().type);
+            Destroy(collision.gameObject);
+        }
+    }
+
 }

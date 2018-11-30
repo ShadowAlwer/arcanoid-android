@@ -45,7 +45,12 @@ public class AudioMenager : MonoBehaviour {
 
     public void PlayTheme(string name) {
 
-        Sound s= Array.Find(sounds, sound => sound.name == name);
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        if (s == null) {
+            Debug.Log("No sound with name "+name);
+            return;
+        }
 
         if (!s.source.isPlaying) {
             StopAllPlaying();

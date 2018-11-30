@@ -74,6 +74,10 @@ public class LevelMenager : MonoBehaviour {
         }
     }
 
+    public void AddHealth() {
+        lives++;
+    }
+
     private void Defeat()
     {
         defeatPauseMenu.Defeat();

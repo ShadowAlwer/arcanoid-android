@@ -118,6 +118,9 @@ public class BallController : MonoBehaviour
         {
             levelMenager.BottomWallHit();
         }
+        //if (collision.gameObject.tag == Tags.POWER_UP) {
+        //    Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>(),true);
+        //}
     }
 
 

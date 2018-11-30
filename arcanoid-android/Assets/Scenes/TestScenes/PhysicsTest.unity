@@ -434,7 +434,7 @@ Prefab:
     - target: {fileID: 224335737952744892, guid: aede7eb3c1d19f64384ffab211328d2a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0015258789
+      value: -0.0014648438
       objectReference: {fileID: 0}
     - target: {fileID: 224335737952744892, guid: aede7eb3c1d19f64384ffab211328d2a,
         type: 2}
@@ -884,6 +884,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 238.11
       objectReference: {fileID: 0}
+    - target: {fileID: 4525546121270638, guid: ea5c4b51bfdced546ae25fd2654fd834, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 447.3065
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea5c4b51bfdced546ae25fd2654fd834, type: 2}
   m_IsPrefabAsset: 0
@@ -1064,7 +1068,7 @@ Prefab:
     - target: {fileID: 224158814053168758, guid: 2ff336192c1d2b042bb8bc164ffc4d77,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0076293945
+      value: 0.0076904297
       objectReference: {fileID: 0}
     - target: {fileID: 224158814053168758, guid: 2ff336192c1d2b042bb8bc164ffc4d77,
         type: 2}
@@ -1396,6 +1400,7 @@ MonoBehaviour:
   ballPoint: {fileID: 439864254}
   victoryPauseMenu: {fileID: 1675127893}
   defeatPauseMenu: {fileID: 1500225956}
+  musicTheme: 
 --- !u!1001 &1382040754
 Prefab:
   m_ObjectHideFlags: 0
@@ -1525,6 +1530,52 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1067536116}
   m_Script: {fileID: 11500000, guid: 269a3c8aef04dd849aaede14b005f862, type: 3}
+--- !u!1001 &1503941109
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4282097925164344, guid: 347459a6023d7cd44b183f2b7491ee43, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 411
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282097925164344, guid: 347459a6023d7cd44b183f2b7491ee43, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1133
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282097925164344, guid: 347459a6023d7cd44b183f2b7491ee43, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.156976
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282097925164344, guid: 347459a6023d7cd44b183f2b7491ee43, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282097925164344, guid: 347459a6023d7cd44b183f2b7491ee43, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282097925164344, guid: 347459a6023d7cd44b183f2b7491ee43, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282097925164344, guid: 347459a6023d7cd44b183f2b7491ee43, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282097925164344, guid: 347459a6023d7cd44b183f2b7491ee43, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299851163875476, guid: 347459a6023d7cd44b183f2b7491ee43, type: 2}
+      propertyPath: m_Name
+      value: PowerUpsGenerator
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 347459a6023d7cd44b183f2b7491ee43, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1591730765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,11 +1989,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4204871675045988, guid: d3d0958c7f4485d44b65fb7737b4c1a2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 361
+      value: 364
       objectReference: {fileID: 0}
     - target: {fileID: 4204871675045988, guid: d3d0958c7f4485d44b65fb7737b4c1a2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 757
+      value: 763
       objectReference: {fileID: 0}
     - target: {fileID: 4204871675045988, guid: d3d0958c7f4485d44b65fb7737b4c1a2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1971,6 +2022,10 @@ Prefab:
     - target: {fileID: 1051883080078476, guid: d3d0958c7f4485d44b65fb7737b4c1a2, type: 2}
       propertyPath: m_Name
       value: 'Background '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051883080078476, guid: d3d0958c7f4485d44b65fb7737b4c1a2, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3d0958c7f4485d44b65fb7737b4c1a2, type: 2}
