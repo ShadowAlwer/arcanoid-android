@@ -13,6 +13,10 @@ public class PowerUpMenager : MonoBehaviour {
 
     public float widthAdded=200f;
 
+    public GameObject powerUpBallPrefab;
+
+    public Transform ballPoint;
+
     float platformPowerUpEndTime;
 
     Transform originalPlatformTransform;
@@ -44,12 +48,14 @@ public class PowerUpMenager : MonoBehaviour {
                 ApplayHealthPowerUp();
                 break;
             case PowerUp.Balls:
+                ApplayBallsPowerUp();
                 break;
             case PowerUp.Rockets:
                 break;          
         }
     }
 
+ 
 
     private void ApplayPlatformPowerUp()
     {
@@ -74,4 +80,12 @@ public class PowerUpMenager : MonoBehaviour {
             level.AddHealth();
         }
     }
+
+    private void ApplayBallsPowerUp()
+    {
+        Debug.Log("New ball");
+        GameObject ball=Instantiate(powerUpBallPrefab);
+        ball.transform.position = ballPoint.position;
+    }
+
 }

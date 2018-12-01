@@ -15,24 +15,46 @@ public class BallController : MonoBehaviour
     public Text acelerationDisplay;
     public Slider acelerationSlider;
     public Image acelerationSliderImage;
+    public bool isPowerUpBall;
 
     public Color cdBar;
     public Color fullBar;
     float lastAcelerationTime;
 
+    BallComboController comboController;
     GameObject platform;
     
     // Use this for initialization
     void Start()
     {      
+
         platform = GameObject.FindGameObjectWithTag(Tags.PLATFORM);
+
+        if (isPowerUpBall) {
+            Debug.Log("PowerUpBall");
+            GameObject[] powerups = GameObject.FindGameObjectsWithTag(Tags.POWER_UP);
+            foreach(GameObject powerup in powerups) {
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), powerup.GetComponent<Collider2D>());
+            }
+
+            GameObject[] balls = GameObject.FindGameObjectsWithTag(Tags.BALL);
+            foreach (GameObject ball in balls)
+            {
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), ball.GetComponent<Collider2D>());
+            }
+        }
+        comboController = FindObjectOfType<BallComboController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isPowerUpBall)
+        {
+            Debug.Log("PowerUpBall_1");
+        }
 
-        if (started == false)
+            if (started == false)
         {
 
             bool ballStart = false;
@@ -101,7 +123,7 @@ public class BallController : MonoBehaviour
 
         if (started == true)
         {
-            if (SystemInfo.supportsAccelerometer) {
+            if (SystemInfo.supportsAccelerometer && !isPowerUpBall) {
                 Acelerate();
             }
             if (GetComponent<Rigidbody2D>().velocity.magnitude != speed)
@@ -110,17 +132,36 @@ public class BallController : MonoBehaviour
             }
 
         }
+
+        if (isPowerUpBall)
+        {
+            Debug.Log("PowerUpBall_2");
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == Tags.BOTTOM_WALL)
         {
-            levelMenager.BottomWallHit();
+            if (isPowerUpBall)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                levelMenager.BottomWallHit();
+            }
         }
-        //if (collision.gameObject.tag == Tags.POWER_UP) {
-        //    Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>(),true);
-        //}
+        if (collision.gameObject.CompareTag(Tags.PLATFORM) && !isPowerUpBall)
+        {
+            comboController.ResetCombo();
+        }
+
+        if (collision.gameObject.CompareTag(Tags.BLOCK))
+        {
+            comboController.AddScore(collision.gameObject.GetComponent<BlockController>().GetPointValue());
+        }
     }
 
 
@@ -158,8 +199,11 @@ public class BallController : MonoBehaviour
     }
 
     private void ResetSlider() {
-        acelerationSlider.value = 0;
-        acelerationSliderImage.color = cdBar;
+        if (!isPowerUpBall)
+        {
+            acelerationSlider.value = 0;
+            acelerationSliderImage.color = cdBar;
+        }
     }
  
 

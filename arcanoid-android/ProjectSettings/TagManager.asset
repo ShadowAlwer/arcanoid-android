@@ -11,6 +11,8 @@ TagManager:
   - PauzeButton
   - FxTemporaire
   - PowerUp
+  - HardBlock
+  - Rocket
   layers:
   - Default
   - TransparentFX

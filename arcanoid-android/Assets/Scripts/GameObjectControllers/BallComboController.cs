@@ -35,6 +35,20 @@ public class BallComboController : MonoBehaviour {
 
     }
 
+    public void AddScore(int points) {
+        combo++;
+        score += combo * points;
+        scoreUI.text = SCORE_STRING + score;
+        comboUI.text = COMBO_STRING + combo;
+        
+    }
+
+    public void ResetCombo() {
+        combo = 0;
+        comboUI.text = COMBO_STRING + combo;
+
+    }
+
     public int GetScore() {
         return score;
     }
@@ -44,11 +58,4 @@ public class BallComboController : MonoBehaviour {
         return combo;
     }
 
-    // Use this for initialization
-    void Start()
-    {
-    }
-    // Update is called once per frame
-    void Update () {		
-	}
 }
