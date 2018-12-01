@@ -13,6 +13,7 @@ TagManager:
   - PowerUp
   - HardBlock
   - Rocket
+  - Wall
   layers:
   - Default
   - TransparentFX

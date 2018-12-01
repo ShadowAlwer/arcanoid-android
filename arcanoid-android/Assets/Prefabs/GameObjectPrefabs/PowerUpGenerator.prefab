@@ -55,5 +55,6 @@ MonoBehaviour:
   - {fileID: 1863547258856634, guid: 9b4998ec08d00dd4abf0010f49e0ec96, type: 2}
   - {fileID: 1234123965624904, guid: 099af4258a38fdf46a3558dbf75a095e, type: 2}
   - {fileID: 1943118673658602, guid: e881974237526b34385e48161f0dea0f, type: 2}
+  - {fileID: 1962588147843846, guid: 804c433492b453e4f80d7a3e0b4bda12, type: 2}
   deltaTime: 5
   chance: 0.1

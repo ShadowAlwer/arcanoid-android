@@ -15,6 +15,7 @@ public class PowerUpController : MonoBehaviour {
         GameObject[] balls=GameObject.FindGameObjectsWithTag(Tags.BALL);
         GameObject[] blocks = GameObject.FindGameObjectsWithTag(Tags.BLOCK);
         GameObject[] hardblocks= GameObject.FindGameObjectsWithTag(Tags.HARD_BLOCK);
+        GameObject[] rockets = GameObject.FindGameObjectsWithTag(Tags.ROCKET);
         Collider2D collider = GetComponent<Collider2D>();
         if (collider != null)
         {
@@ -29,6 +30,10 @@ public class PowerUpController : MonoBehaviour {
             foreach (GameObject block in hardblocks)
             {
                 Physics2D.IgnoreCollision(collider, block.GetComponent<Collider2D>());
+            }
+            foreach (GameObject rocket in rockets)
+            {
+                Physics2D.IgnoreCollision(collider, rocket.GetComponent<Collider2D>());
             }
         }          
     }

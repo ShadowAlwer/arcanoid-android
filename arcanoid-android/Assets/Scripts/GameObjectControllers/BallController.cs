@@ -26,24 +26,29 @@ public class BallController : MonoBehaviour
     
     // Use this for initialization
     void Start()
-    {      
-
+    {
+        comboController = FindObjectOfType<BallComboController>();
         platform = GameObject.FindGameObjectWithTag(Tags.PLATFORM);
 
         if (isPowerUpBall) {
             Debug.Log("PowerUpBall");
             GameObject[] powerups = GameObject.FindGameObjectsWithTag(Tags.POWER_UP);
-            foreach(GameObject powerup in powerups) {
-                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), powerup.GetComponent<Collider2D>());
-            }
-
             GameObject[] balls = GameObject.FindGameObjectsWithTag(Tags.BALL);
+            GameObject[] rockets = GameObject.FindGameObjectsWithTag(Tags.ROCKET);
+            Collider2D collider = GetComponent<Collider2D>();
+
+            foreach (GameObject powerup in powerups) {
+                Physics2D.IgnoreCollision(collider, powerup.GetComponent<Collider2D>());
+            }           
             foreach (GameObject ball in balls)
             {
-                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), ball.GetComponent<Collider2D>());
+                Physics2D.IgnoreCollision(collider, ball.GetComponent<Collider2D>());
+            }          
+            foreach (GameObject rocket in rockets)
+            {
+                Physics2D.IgnoreCollision(collider, rocket.GetComponent<Collider2D>());
             }
-        }
-        comboController = FindObjectOfType<BallComboController>();
+        }   
     }
 
     // Update is called once per frame

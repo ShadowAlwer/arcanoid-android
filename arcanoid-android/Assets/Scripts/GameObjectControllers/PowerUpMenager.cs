@@ -13,6 +13,10 @@ public class PowerUpMenager : MonoBehaviour {
 
     public float widthAdded=200f;
 
+    public float rocketsWidth = 80f;
+
+    public GameObject powerUpRocketPrefab;
+
     public GameObject powerUpBallPrefab;
 
     public Transform ballPoint;
@@ -51,11 +55,10 @@ public class PowerUpMenager : MonoBehaviour {
                 ApplayBallsPowerUp();
                 break;
             case PowerUp.Rockets:
+                ApplayRocketsPowerUp();
                 break;          
         }
     }
-
- 
 
     private void ApplayPlatformPowerUp()
     {
@@ -86,6 +89,15 @@ public class PowerUpMenager : MonoBehaviour {
         Debug.Log("New ball");
         GameObject ball=Instantiate(powerUpBallPrefab);
         ball.transform.position = ballPoint.position;
+    }
+
+    private void ApplayRocketsPowerUp()
+    {
+        Debug.Log("New ball");
+        GameObject rocket1 = Instantiate(powerUpRocketPrefab);
+        rocket1.transform.position = ballPoint.position+new Vector3(-rocketsWidth,0,0);
+        GameObject rocket2 = Instantiate(powerUpRocketPrefab);
+        rocket2.transform.position = ballPoint.position + new Vector3(rocketsWidth, 0, 0);
     }
 
 }
