@@ -27,11 +27,11 @@ public class BallController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        levelMenager = FindObjectOfType<LevelMenager>();
         comboController = FindObjectOfType<BallComboController>();
         platform = GameObject.FindGameObjectWithTag(Tags.PLATFORM);
 
         if (isPowerUpBall) {
-            Debug.Log("PowerUpBall");
             GameObject[] powerups = GameObject.FindGameObjectsWithTag(Tags.POWER_UP);
             GameObject[] balls = GameObject.FindGameObjectsWithTag(Tags.BALL);
             GameObject[] rockets = GameObject.FindGameObjectsWithTag(Tags.ROCKET);
@@ -54,19 +54,11 @@ public class BallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPowerUpBall)
+        if (started == false)
         {
-            Debug.Log("PowerUpBall_1");
-        }
-
-            if (started == false)
-        {
-
             bool ballStart = false;
             if (Application.platform == RuntimePlatform.Android)
-            {
-
-                
+            {                
                 if (Input.touchCount > 0)
                 {
                     foreach (Touch touch in Input.touches)
@@ -91,7 +83,7 @@ public class BallController : MonoBehaviour
             //jeżeli wykryto szybki dotyk lub spacje rozpocznij ruch kulki
             if (ballStart)
             {
-                //Debug.Log(Input.GetKeyDown(KeyCode.Space));
+
                 Vector2 tmp = transform.position;
                 Vector2 v;
                 if (tmp.x < 0)
@@ -110,7 +102,6 @@ public class BallController : MonoBehaviour
             else
             {
                 Vector2 tmp = transform.position;
-                //Debug.Log("x =" + tmp.x+" y =" + tmp.y);
                 Vector2 tmpPlatform = platform.transform.position;
                 tmp.x = tmpPlatform.x;
                 if (tmp.x < 0)
@@ -135,14 +126,7 @@ public class BallController : MonoBehaviour
             {
                     GetComponent<Rigidbody2D>().velocity = Vector2.ClampMagnitude(GetComponent<Rigidbody2D>().velocity, 1) * speed;
             }
-
         }
-
-        if (isPowerUpBall)
-        {
-            Debug.Log("PowerUpBall_2");
-        }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -186,7 +170,6 @@ public class BallController : MonoBehaviour
         }
         else if (magnitude2D>minAcelerate) {
             Vector2 aceleration = new Vector2(x, y);
-            //aceleration = (aceleration + GetComponent<Rigidbody2D>().velocity);  //średnia z wektora prszyśpieszenia i szybkości
             aceleration.Normalize();
             GetComponent<Rigidbody2D>().velocity =aceleration* speed;
             lastAcelerationTime = Time.time;

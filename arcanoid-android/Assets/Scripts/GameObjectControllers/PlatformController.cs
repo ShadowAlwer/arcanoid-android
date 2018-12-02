@@ -6,10 +6,7 @@ using UnityEngine;
 public class PlatformController : MonoBehaviour {
 
     public float speed = 20f;
-	// Use this for initialization
-	void Start () {
-        //Time.timeScale = 1f; //TODO:check why timeScale zeros after victory
-	}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -34,7 +31,6 @@ public class PlatformController : MonoBehaviour {
                     {
                         MoveLeft(); //moves platform left
                     }
-                    //break;
                 }
             }
         }
@@ -49,12 +45,6 @@ public class PlatformController : MonoBehaviour {
         GetComponent<Rigidbody2D>().velocity = Vector2.left * speed;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == Tags.POWER_UP){
-            GetComponent<PowerUpMenager>().ApplayPowerUp(collision.gameObject.GetComponent<PowerUpController>().type);
-            Destroy(collision.gameObject);
-        }
-    }
+    
 
 }

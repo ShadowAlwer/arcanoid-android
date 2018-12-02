@@ -34,12 +34,21 @@ public class PowerUpMenager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
         if (isPlatformPowerUpActive && Time.time > platformPowerUpEndTime) {
             ResetPlatformPowerUp();
         }
 
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == Tags.POWER_UP)
+        {
+            ApplayPowerUp(collision.gameObject.GetComponent<PowerUpController>().type);
+            Destroy(collision.gameObject);
+        }
+    }
+
 
     public void ApplayPowerUp(PowerUp type) {
 
@@ -62,7 +71,6 @@ public class PowerUpMenager : MonoBehaviour {
 
     private void ApplayPlatformPowerUp()
     {
-        Debug.Log("Applaing PlatformPowerUp");
         if (!isPlatformPowerUpActive)
         {
             GameObject.FindGameObjectWithTag(Tags.PLATFORM).transform.localScale+=new Vector3(widthAdded,0,0);
@@ -86,14 +94,12 @@ public class PowerUpMenager : MonoBehaviour {
 
     private void ApplayBallsPowerUp()
     {
-        Debug.Log("New ball");
         GameObject ball=Instantiate(powerUpBallPrefab);
         ball.transform.position = ballPoint.position;
     }
 
     private void ApplayRocketsPowerUp()
     {
-        Debug.Log("New ball");
         GameObject rocket1 = Instantiate(powerUpRocketPrefab);
         rocket1.transform.position = ballPoint.position+new Vector3(-rocketsWidth,0,0);
         GameObject rocket2 = Instantiate(powerUpRocketPrefab);

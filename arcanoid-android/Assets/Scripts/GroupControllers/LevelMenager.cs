@@ -25,17 +25,11 @@ public class LevelMenager : MonoBehaviour {
         ball = GameObject.FindGameObjectWithTag(Tags.BALL);
         scenName = SceneManager.GetActiveScene().name;
 
-
-        Debug.Log("Starting level menager");
         if (Time.timeScale == 0f)
         {
-            Debug.Log("Restarting game time scale");
             Time.timeScale = 1f;
-
         }
-
         FindObjectOfType<AudioMenager>().PlayTheme(musicTheme);
-
 
     }
 	
@@ -56,8 +50,7 @@ public class LevelMenager : MonoBehaviour {
         if (score > PlayerPrefs.GetInt(scenName + "HighScore"))
         {
             PlayerPrefs.SetInt(scenName + "HighScore", score);
-        }
-        
+        }      
     }
 
     public void BottomWallHit() {
@@ -67,8 +60,7 @@ public class LevelMenager : MonoBehaviour {
             {
                 Defeat();                
             }
-            else {
-            
+            else {           
                 ball.GetComponent<BallController>().Stop(ballPoint);
             }
         }

@@ -80,17 +80,17 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: eb77b7661da3b014687bb91c82f0ac49, type: 3}
     volume: 0.5
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: BTheme
     clip: {fileID: 8300000, guid: 2720ada3dc4a1fc45a21d60cb3fdf74e, type: 3}
     volume: 0.5
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: CTheme
     clip: {fileID: 8300000, guid: 27fb413a9d6c4b2469d4218183dc88e5, type: 3}
     volume: 0.5
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}

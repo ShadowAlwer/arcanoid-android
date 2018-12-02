@@ -20,8 +20,7 @@ public class BlockController : MonoBehaviour {
             }
 
             FindObjectOfType<AudioMenager>().Play("Beep1");
-
-           
+            
             Destroy(gameObject);
         }
     }
@@ -30,15 +29,4 @@ public class BlockController : MonoBehaviour {
         return pointsValue;
     }
 
-
-
-    // Use this for initialization
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 }

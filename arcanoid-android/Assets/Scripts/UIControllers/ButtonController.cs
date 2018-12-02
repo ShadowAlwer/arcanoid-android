@@ -7,14 +7,10 @@ public class ButtonController : MonoBehaviour {
 
     public string scenToLoad;
 
-
     public void LoadScene()
     {
-        SceneManager.LoadScene(scenToLoad);
-        
+        SceneManager.LoadScene(scenToLoad);      
     }
-
-
 
     public void QuitGame() {
         Application.Quit();

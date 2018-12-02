@@ -9,8 +9,6 @@ public class HighScoreController : MonoBehaviour {
     private const string HIGH_SCORE_KEY = "HighScore";
     private const string HIGH_SCORE_TEXT = ": " ;
 
-    //public Text highScoreText;
-
     public GameObject panelPrefab;
 
     List<GameObject> highScoresPanels;
@@ -29,8 +27,6 @@ public class HighScoreController : MonoBehaviour {
             foreach (string levelName in (string[])levels.GetType().GetField(levelType).GetValue(levels)) {
                 GameObject panel = Instantiate(panelPrefab) as GameObject;
                 tmp = GetHighScoreByLevelName(levelName);
-                Debug.Log("Level Name="+levelName);
-                //Debug.Log("TMP=" + tmp);
                 panel.transform.SetParent(this.transform, false);
                 panel.GetComponentInChildren<Text>().text = levelName +HIGH_SCORE_TEXT + tmp;
                 highScoresPanels.Add(panel);
@@ -50,10 +46,8 @@ public class HighScoreController : MonoBehaviour {
     }
 
 
-
     public void ResetHighScoreAll() {
         PlayerPrefs.DeleteAll();
-
         foreach (GameObject panel in highScoresPanels) {
             Destroy(panel);
         }
@@ -61,8 +55,4 @@ public class HighScoreController : MonoBehaviour {
         GetAllHighScores();
     }
 
-    //private void onlevelwasloaded(int level)
-    //{
-
-    //}
 }

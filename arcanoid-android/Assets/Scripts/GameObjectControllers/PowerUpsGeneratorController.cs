@@ -36,7 +36,6 @@ public class PowerUpsGeneratorController : MonoBehaviour {
                         powerUp.transform.position = tmp;
                         lastGeneration = Time.time;
                     }
-
                 }
             }
         }

@@ -8,9 +8,4 @@ public class MenuMenager : MonoBehaviour {
 	void Start () {
         FindObjectOfType<AudioMenager>().PlayTheme("Theme");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

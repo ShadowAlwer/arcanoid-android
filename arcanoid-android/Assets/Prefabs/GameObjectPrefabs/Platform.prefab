@@ -129,12 +129,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1146995437633120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eaf000dc3b31064f9e85ae66c0e02b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 76121126d97cc0a4fb5eafd06e8e0f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   platformPowerUpDuration: 5
   isPlatformPowerUpActive: 0
-  widthMultiplaier: 2
+  widthAdded: 200
+  rocketsWidth: 80
+  powerUpRocketPrefab: {fileID: 1685263202068944, guid: 9903d2e1bf208ae4091f5e1f7ebe952b,
+    type: 2}
+  powerUpBallPrefab: {fileID: 1995942126816762, guid: f7c0ac819e50fe34ab10324ea9c3e8d4,
+    type: 2}
+  ballPoint: {fileID: 4051566696496422}
 --- !u!114 &114843186561067404
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -7,10 +7,8 @@ public class PowerUpController : MonoBehaviour {
 
     public PowerUp type;
 
-    //public float speed=200f;
 	// Use this for initialization
 	void Start () {
-        //GetComponent<Rigidbody2D>().velocity =new Vector2 (0,-speed);
 
         GameObject[] balls=GameObject.FindGameObjectsWithTag(Tags.BALL);
         GameObject[] blocks = GameObject.FindGameObjectsWithTag(Tags.BLOCK);
@@ -38,12 +36,6 @@ public class PowerUpController : MonoBehaviour {
         }          
     }
 	
-	// Update is called once per frame
-	void Update () {
-       
-	}
-
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == Tags.BOTTOM_WALL)

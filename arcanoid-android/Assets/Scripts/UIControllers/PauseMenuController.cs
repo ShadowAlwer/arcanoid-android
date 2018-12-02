@@ -9,14 +9,12 @@ public class PauseMenuController : MonoBehaviour {
 
     public GameObject levelGUI;
 
-
     public  void PauseGame() {
         GamePaused = true;
         Time.timeScale = 0f;
         this.gameObject.SetActive(true);
         levelGUI.SetActive(false);
     }
-
 
     public void ResumeGame() {
         GamePaused = false;
