@@ -4657,7 +4657,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 896508600}
-  - component: {fileID: 896508599}
   m_Layer: 0
   m_Name: Blocks (1)
   m_TagString: Untagged
@@ -4665,23 +4664,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &896508599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 896508598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c58fbc8d4d1d5e04c968a4f099fc41fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: 3
-  godMode: 0
-  ballPoint: {fileID: 1103096269}
-  victoryPauseMenu: {fileID: 1384745465}
-  defeatPauseMenu: {fileID: 1445839221}
-  musicTheme: ATheme
 --- !u!4 &896508600
 Transform:
   m_ObjectHideFlags: 0
@@ -5576,6 +5558,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1146995437633120, guid: ea5c4b51bfdced546ae25fd2654fd834,
     type: 2}
   m_PrefabInternal: {fileID: 1103096265}
+--- !u!114 &1103096267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1103096266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58fbc8d4d1d5e04c968a4f099fc41fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 3
+  godMode: 0
+  ballPoint: {fileID: 1103096269}
+  victoryPauseMenu: {fileID: 1384745465}
+  defeatPauseMenu: {fileID: 1445839221}
+  healthText: {fileID: 1223006646}
+  musicTheme: ATheme
 --- !u!61 &1103096268
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6487,6 +6487,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224919665360633294, guid: 36b302437c23e3849b610db2a69da5c1,
     type: 2}
   m_PrefabInternal: {fileID: 1223006644}
+--- !u!114 &1223006646 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114404162428342170, guid: 36b302437c23e3849b610db2a69da5c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1223006644}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1288510994
 GameObject:
   m_ObjectHideFlags: 0
@@ -9224,7 +9230,7 @@ Prefab:
         type: 2}
       propertyPath: levelMenager
       value: 
-      objectReference: {fileID: 896508599}
+      objectReference: {fileID: 0}
     - target: {fileID: 114565126598445886, guid: c039143fab4f3ba4f9e7fe6f504c1540,
         type: 2}
       propertyPath: acelerationSlider

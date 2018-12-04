@@ -17,6 +17,7 @@ public class LevelMenager : MonoBehaviour {
     public Transform ballPoint;
     public PauseMenuController victoryPauseMenu;
     public PauseMenuController defeatPauseMenu;
+    public Text healthText;
     public string musicTheme;
 
 
@@ -30,7 +31,7 @@ public class LevelMenager : MonoBehaviour {
             Time.timeScale = 1f;
         }
         FindObjectOfType<AudioMenager>().PlayTheme(musicTheme);
-
+        SetHealthText();
     }
 	
 	// Update is called once per frame
@@ -62,12 +63,18 @@ public class LevelMenager : MonoBehaviour {
             }
             else {           
                 ball.GetComponent<BallController>().Stop(ballPoint);
+                SetHealthText();
             }
         }
     }
 
     public void AddHealth() {
         lives++;
+        SetHealthText();
+    }
+
+    public void SetHealthText() {
+        healthText.text = "" + (lives - 1);
     }
 
     private void Defeat()

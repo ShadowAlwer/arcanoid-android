@@ -9,42 +9,25 @@ public class BallComboController : MonoBehaviour {
     public Text scoreUI;
     public Text comboUI;
 
-    const string SCORE_STRING = "Score: ";
-    const string COMBO_STRING = "Combo: ";
+    const string SCORE_STRING = "$ ";
+    const string COMBO_STRING = "x";
 
     int score=0;
-    int combo=0;
+    int combo=1;
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
 
-        if (collision.gameObject.CompareTag(Tags.PLATFORM))
-        {
-            combo = 0;
-            comboUI.text = COMBO_STRING + combo;
-        }
-
-        if (collision.gameObject.CompareTag(Tags.BLOCK)) {
-            combo++;
-            score += combo * collision.gameObject.GetComponent<BlockController>().GetPointValue();
-            scoreUI.text = SCORE_STRING + score;
-            comboUI.text = COMBO_STRING + combo;
-
-        }
-
-    }
 
     public void AddScore(int points) {
-        combo++;
-        score += combo * points;
-        scoreUI.text = SCORE_STRING + score;
-        comboUI.text = COMBO_STRING + combo;
         
+        score += combo * points;
+        scoreUI.text = SCORE_STRING + score;       
+        combo++;
+        comboUI.text = COMBO_STRING + combo;
     }
 
     public void ResetCombo() {
-        combo = 0;
+        combo = 1;
         comboUI.text = COMBO_STRING + combo;
 
     }

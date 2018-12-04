@@ -1247,7 +1247,8 @@ Prefab:
       propertyPath: musicTheme
       value: ATheme
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114718775426714000, guid: 9dede835d332fa04198695bc11eaad24, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 9dede835d332fa04198695bc11eaad24, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &432995102
@@ -1598,6 +1599,12 @@ MonoBehaviour:
 --- !u!114 &487371122 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114981705190455842, guid: 36b302437c23e3849b610db2a69da5c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 487371116}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &487371123 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114404162428342170, guid: 36b302437c23e3849b610db2a69da5c1,
     type: 2}
   m_PrefabInternal: {fileID: 487371116}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -2987,7 +2994,7 @@ Prefab:
     - target: {fileID: 114247630035634778, guid: 2ff336192c1d2b042bb8bc164ffc4d77,
         type: 2}
       propertyPath: scenToLoad
-      value: A3
+      value: A2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff336192c1d2b042bb8bc164ffc4d77, type: 2}
@@ -3114,7 +3121,7 @@ Prefab:
         type: 2}
       propertyPath: levelMenager
       value: 
-      objectReference: {fileID: 1878705596}
+      objectReference: {fileID: 0}
     - target: {fileID: 114565126598445886, guid: c039143fab4f3ba4f9e7fe6f504c1540,
         type: 2}
       propertyPath: acelerationSlider
@@ -4746,6 +4753,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.43, y: 0.14}
   m_EdgeRadius: 0
+--- !u!114 &1633543788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1633543786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58fbc8d4d1d5e04c968a4f099fc41fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 3
+  godMode: 0
+  ballPoint: {fileID: 1633543785}
+  victoryPauseMenu: {fileID: 1929735326}
+  defeatPauseMenu: {fileID: 962862165}
+  healthText: {fileID: 487371123}
+  musicTheme: ATheme
 --- !u!1 &1677661793
 GameObject:
   m_ObjectHideFlags: 0
@@ -5637,12 +5662,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1878705596 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114718775426714000, guid: 9dede835d332fa04198695bc11eaad24,
-    type: 2}
-  m_PrefabInternal: {fileID: 403492411}
-  m_Script: {fileID: 11500000, guid: c58fbc8d4d1d5e04c968a4f099fc41fb, type: 3}
 --- !u!1 &1882509516
 GameObject:
   m_ObjectHideFlags: 0

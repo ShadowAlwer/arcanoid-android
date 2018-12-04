@@ -52,6 +52,11 @@ public class AudioMenager : MonoBehaviour {
             return;
         }
 
+        if (s.source == null) {
+            Debug.Log("No source on sound "+s.name);
+            return;
+        }
+
         if (!s.source.isPlaying) {
             StopAllPlaying();
             s.source.Play();
