@@ -1232,6 +1232,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &472589470 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4051566696496422, guid: ea5c4b51bfdced546ae25fd2654fd834,
+    type: 2}
+  m_PrefabInternal: {fileID: 1680540506}
 --- !u!1 &480398467
 GameObject:
   m_ObjectHideFlags: 0
@@ -3959,7 +3964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 3
   godMode: 0
-  ballPoint: {fileID: 0}
+  ballPoint: {fileID: 472589470}
   victoryPauseMenu: {fileID: 1836008805}
   defeatPauseMenu: {fileID: 1945633820}
   healthText: {fileID: 84375019}

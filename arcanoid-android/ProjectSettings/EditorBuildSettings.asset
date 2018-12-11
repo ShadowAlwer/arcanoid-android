@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScenes/PhysicsTest.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/TestScenes/VictoryTest.unity
-    guid: bf7b434a666934c4683e6298d51b66ec
-  - enabled: 1
     path: Assets/Scenes/TestScenes/Highscores.unity
     guid: 26980e25523fa0c4fa7319955b33b1d0
   - enabled: 1
