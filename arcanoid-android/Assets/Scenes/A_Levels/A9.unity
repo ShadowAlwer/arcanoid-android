@@ -8420,6 +8420,7 @@ MonoBehaviour:
   lives: 3
   godMode: 0
   ballPoint: {fileID: 1924363957}
+  pauseMenu: {fileID: 308477490}
   victoryPauseMenu: {fileID: 1065593871}
   defeatPauseMenu: {fileID: 1358060389}
   healthText: {fileID: 373474409}

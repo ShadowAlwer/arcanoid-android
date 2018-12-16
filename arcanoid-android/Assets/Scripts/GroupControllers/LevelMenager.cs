@@ -15,6 +15,7 @@ public class LevelMenager : MonoBehaviour {
     public int lives = 3;
     public bool godMode = false;
     public Transform ballPoint;
+    public PauseMenuController pauseMenu;
     public PauseMenuController victoryPauseMenu;
     public PauseMenuController defeatPauseMenu;
     public Text healthText;
@@ -42,6 +43,12 @@ public class LevelMenager : MonoBehaviour {
             Victory();
             
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("Escape down");
+            pauseMenu.PauseGame();
+        }
+
     }
 
     private void Victory()
@@ -81,4 +88,13 @@ public class LevelMenager : MonoBehaviour {
     {
         defeatPauseMenu.Defeat();
     }
+
+    void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+        {
+            pauseMenu.PauseGame();
+        }
+    }
+
 }
