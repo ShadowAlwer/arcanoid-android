@@ -35,7 +35,7 @@ public class RockeController : MonoBehaviour {
     {
         if (collision.gameObject.tag == Tags.BLOCK)
         {
-            FindObjectOfType<BallComboController>().AddScore(collision.gameObject.GetComponent<BlockController>().GetPointValue());
+            FindObjectOfType<ScoreGUIController>().AddScore(collision.gameObject.GetComponent<BlockController>().GetPointValue());
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

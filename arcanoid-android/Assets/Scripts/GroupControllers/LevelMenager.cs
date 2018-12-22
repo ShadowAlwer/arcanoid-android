@@ -11,6 +11,7 @@ public class LevelMenager : MonoBehaviour {
     GameObject blockChceck;
     string scenName;
     GameObject ball;
+    ScoreGUIController scoreGUI;
     
     public int lives = 3;
     public bool godMode = false;
@@ -26,6 +27,7 @@ public class LevelMenager : MonoBehaviour {
     void Start () {
         ball = GameObject.FindGameObjectWithTag(Tags.BALL);
         scenName = SceneManager.GetActiveScene().name;
+        scoreGUI = FindObjectOfType<ScoreGUIController>();
 
         if (Time.timeScale == 0f)
         {
@@ -54,7 +56,7 @@ public class LevelMenager : MonoBehaviour {
     private void Victory()
     {
         victoryPauseMenu.Victory();
-        int score = ball.GetComponent<BallComboController>().GetScore();
+        int score = scoreGUI.GetScore(); 
         if (score > PlayerPrefs.GetInt(scenName + "HighScore"))
         {
             PlayerPrefs.SetInt(scenName + "HighScore", score);

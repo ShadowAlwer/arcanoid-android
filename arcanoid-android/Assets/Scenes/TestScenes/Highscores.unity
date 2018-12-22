@@ -471,7 +471,7 @@ Prefab:
     - target: {fileID: 114812239956107758, guid: 708a3fe4e31fa15499ea11bf83a35065,
         type: 2}
       propertyPath: scenToLoad
-      value: WelcomeTest
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 114942920908167962, guid: 708a3fe4e31fa15499ea11bf83a35065,
         type: 2}

@@ -273,11 +273,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 2043557614}
     m_Modifications:
-    - target: {fileID: 114403504124238868, guid: 36b302437c23e3849b610db2a69da5c1,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 224919665360633294, guid: 36b302437c23e3849b610db2a69da5c1,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -398,16 +393,16 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114403504124238868, guid: 36b302437c23e3849b610db2a69da5c1,
+    - target: {fileID: 114555377690960722, guid: 36b302437c23e3849b610db2a69da5c1,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114403504124238868, guid: 36b302437c23e3849b610db2a69da5c1,
+      propertyPath: scoreUI
+      value: 
+      objectReference: {fileID: 116692735}
+    - target: {fileID: 114555377690960722, guid: 36b302437c23e3849b610db2a69da5c1,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
+      propertyPath: comboUI
+      value: 
+      objectReference: {fileID: 116692734}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b302437c23e3849b610db2a69da5c1, type: 2}
   m_IsPrefabAsset: 0
@@ -1316,7 +1311,12 @@ Prefab:
     - target: {fileID: 114154142184783236, guid: aede7eb3c1d19f64384ffab211328d2a,
         type: 2}
       propertyPath: scenToLoad
-      value: WelcomeTest
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 114128178652862542, guid: aede7eb3c1d19f64384ffab211328d2a,
+        type: 2}
+      propertyPath: scenToLoad
+      value: MainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aede7eb3c1d19f64384ffab211328d2a, type: 2}
@@ -1673,24 +1673,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c039143fab4f3ba4f9e7fe6f504c1540, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &712885384 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1121878472265738, guid: c039143fab4f3ba4f9e7fe6f504c1540,
-    type: 2}
-  m_PrefabInternal: {fileID: 712885383}
---- !u!114 &712885385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 712885384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6de987998b0947d46ab9309f1bead788, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreUI: {fileID: 116692735}
-  comboUI: {fileID: 116692734}
 --- !u!1 &735928419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,6 +2414,11 @@ Prefab:
         type: 2}
       propertyPath: scenToLoad
       value: A10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114062846074847646, guid: 2ff336192c1d2b042bb8bc164ffc4d77,
+        type: 2}
+      propertyPath: scenToLoad
+      value: MainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ff336192c1d2b042bb8bc164ffc4d77, type: 2}
@@ -5730,6 +5717,11 @@ Prefab:
       propertyPath: levelGUI
       value: 
       objectReference: {fileID: 116692736}
+    - target: {fileID: 114076326582565470, guid: 12c7a2f7d3e8041448c13b0e4d375b43,
+        type: 2}
+      propertyPath: scenToLoad
+      value: MainMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12c7a2f7d3e8041448c13b0e4d375b43, type: 2}
   m_IsPrefabAsset: 0

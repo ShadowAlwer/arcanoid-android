@@ -21,14 +21,14 @@ public class BallController : MonoBehaviour
     public Color fullBar;
     float lastAcelerationTime;
 
-    BallComboController comboController;
+    ScoreGUIController scoreGUI;
     GameObject platform;
     
     // Use this for initialization
     void Start()
     {
         levelMenager = FindObjectOfType<LevelMenager>();
-        comboController = FindObjectOfType<BallComboController>();
+        scoreGUI = FindObjectOfType<ScoreGUIController>();
         platform = GameObject.FindGameObjectWithTag(Tags.PLATFORM);
 
         if (isPowerUpBall) {
@@ -144,12 +144,12 @@ public class BallController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag(Tags.PLATFORM) && !isPowerUpBall)
         {
-            comboController.ResetCombo();
+            scoreGUI.ResetCombo();
         }
 
         if (collision.gameObject.CompareTag(Tags.BLOCK))
         {
-            comboController.AddScore(collision.gameObject.GetComponent<BlockController>().GetPointValue());
+            scoreGUI.AddScore(collision.gameObject.GetComponent<BlockController>().GetPointValue());
         }
     }
 
