@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class HighScoreController : MonoBehaviour {
 
     private const string HIGH_SCORE_KEY = "HighScore";
-    private const string HIGH_SCORE_TEXT = ": " ;
-
+    private const string HIGH_SCORE_TEXT = ": ";
+    private const string NO_HIGH_SCORE_TEXT = "------";
+	
     public GameObject panelPrefab;
 
     List<GameObject> highScoresPanels;
@@ -40,7 +41,7 @@ public class HighScoreController : MonoBehaviour {
         string highScore = PlayerPrefs.GetInt(levelName + HIGH_SCORE_KEY, 0).ToString();
 
         if (highScore == "0") {
-            highScore = "------";
+            highScore = NO_HIGH_SCORE_TEXT;
         }
         return highScore;
     }
